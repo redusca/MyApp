@@ -1,2 +1,3 @@
 # MyApp
-My app project in C# , Windows Form App
+🎇🎇🎇🎇🎇🎇🎇🎇
+[Trello Borad](https://trello.com/b/mQE8qxfG/myapp)
