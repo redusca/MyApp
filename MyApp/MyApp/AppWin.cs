@@ -26,29 +26,50 @@ namespace MyApp
         #endregion
 
         #region WinForm Size Constants  
-        private const int heightResolutionFrom = 600;
-        private const int heightResolutionTo = 200;
+        private const int YForm = 608;
+        private const int XFrom = 224;
         #endregion
 
         public AppWin()
         {
             InitializeComponent();
-            InitializeCloseButton();
         }
-
         private void AppWin_Load(object sender, EventArgs e)
         {
+            this.AllowTransparency = true;
             SetLocationAndSize();
+            Background();
+            Buttons();
+
+        }
+
+        private void Background()
+        {
+            AppName.Text = "MyApp";
+            AppName.Font = new Font("Arial", 12, FontStyle.Bold);
+            AppName.Location = new Point(0, 0);
+            AppName.Size = new Size(100, 32);
+            AppName.BackColor = Color.Transparent;
+
+            titleBar.Location = new Point(0, 0);
+            titleBar.Size = new Size(YForm, 32);
+            titleBar.BackgroundImage = Properties.Resources.WoodTitleBar;
+            titleBar.BackColor = Color.Transparent;
+
+            background.Location = new Point(0, 0);
+            background.Size = new Size(YForm, XFrom);
+            background.Image = Properties.Resources.MossyRocks_LateNightSky;
+            background.BackColor = Color.Transparent;
         }
 
         private void SetLocationAndSize()
         {
             //Form location
             int screenWidth = GetSystemMetrics(SM_CXSCREEN);
-            Location = new Point(screenWidth - heightResolutionFrom, 0);
+            Location = new Point(screenWidth - YForm, 0);
 
             //Form size
-            Size = new Size(heightResolutionFrom, heightResolutionTo);
+            Size = new Size(YForm, XFrom);
             AutoSize = false;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
@@ -70,12 +91,24 @@ namespace MyApp
         }
 
         #region Button Events
-        private void InitializeCloseButton()
-        {
-     
+
+        private void Buttons()
+        {   
+            closeButton.Location = new Point(YForm - 32, 0);
+            closeButton.Size = new Size(32, 32);
+            closeButton.BackColor = Color.Transparent;
+            closeButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            closeButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            closeButton.Image = Properties.Resources.CloseButton;
+
+            SettingButton.Location = new Point(YForm - 64, 0);
+            SettingButton.Size = new Size(32, 32);
+            SettingButton.BackColor = Color.Transparent;
+            SettingButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            SettingButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            SettingButton.Image = Properties.Resources.SettingButton;
         }
 
-        
         private void closeButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -83,14 +116,21 @@ namespace MyApp
 
         private void closeButton_MouseEnter(object sender, EventArgs e)
         {
-            closeButton.Image = Properties.Resources.download__4_;
+            closeButton.Image = Properties.Resources.CloseButtonHover;
         }
 
         private void closeButton_MouseLeave(object sender, EventArgs e)
         {
-            closeButton.Image = Properties.Resources.SUschi;
+            closeButton.Image = Properties.Resources.CloseButton;
+        }
+        private void SettingButton_MouseEnter(object sender, EventArgs e)
+        {
+            SettingButton.Image = Properties.Resources.SettingButtonHover;
+        }
+        private void SettingButton_MouseLeave(object sender, EventArgs e)
+        {
+            SettingButton.Image = Properties.Resources.SettingButton;
         }
         #endregion
-
     }
 }

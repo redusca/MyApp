@@ -63,9 +63,9 @@ namespace MyApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download__4_ {
+        internal static System.Drawing.Bitmap CloseButton {
             get {
-                object obj = ResourceManager.GetObject("download__4_", resourceCulture);
+                object obj = ResourceManager.GetObject("CloseButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace MyApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Screenshot_20250214_232908 {
+        internal static System.Drawing.Bitmap CloseButtonHover {
             get {
-                object obj = ResourceManager.GetObject("Screenshot_20250214-232908", resourceCulture);
+                object obj = ResourceManager.GetObject("CloseButtonHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,39 @@ namespace MyApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SUschi {
+        internal static System.Drawing.Bitmap MossyRocks_LateNightSky {
             get {
-                object obj = ResourceManager.GetObject("SUschi", resourceCulture);
+                object obj = ResourceManager.GetObject("MossyRocks_LateNightSky", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SettingButton {
+            get {
+                object obj = ResourceManager.GetObject("SettingButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SettingButtonHover {
+            get {
+                object obj = ResourceManager.GetObject("SettingButtonHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WoodTitleBar {
+            get {
+                object obj = ResourceManager.GetObject("WoodTitleBar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
