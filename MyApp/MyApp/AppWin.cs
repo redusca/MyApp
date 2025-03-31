@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using MyApp.Controllers;
+using MyApp.factory;
 
 namespace MyApp
 {
@@ -40,7 +42,7 @@ namespace MyApp
             SetLocationAndSize();
             Background();
             Buttons();
-
+          
         }
 
         private void Background()
@@ -60,6 +62,10 @@ namespace MyApp
             background.Size = new Size(YForm, XFrom);
             background.Image = Properties.Resources.MossyRocks_LateNightSky;
             background.BackColor = Color.Transparent;
+
+            clock.BackColor = Color.Transparent;
+            clock.ForeColor = Color.Transparent;
+            clock.Parent = background;
         }
 
         private void SetLocationAndSize()
@@ -93,7 +99,7 @@ namespace MyApp
         #region Button Events
 
         private void Buttons()
-        {   
+        {
             closeButton.Location = new Point(YForm - 32, 0);
             closeButton.Size = new Size(32, 32);
             closeButton.BackColor = Color.Transparent;
@@ -132,5 +138,17 @@ namespace MyApp
             SettingButton.Image = Properties.Resources.SettingButton;
         }
         #endregion
+
+        private void SettingButton_Click(object sender, EventArgs e)
+        {
+            var set = SettingFactory.Instance.CreateOrReturnForm();
+            set.Show();
+            set.Focus();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -52,15 +52,41 @@
     <Compile Include="AppWin.Designer.cs">
       <DependentUpon>AppWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\Clock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controllers\Clock.Designer.cs">
+      <DependentUpon>Clock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\button\MButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\button\MButton.Designer.cs">
+      <DependentUpon>MButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\factory\FactoryForm.cs" />
+    <Compile Include="Resources\factory\SettingFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AppWin.resx">
       <DependentUpon>AppWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Clock.resx">
+      <DependentUpon>Clock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,15 +107,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MossyRocks_LateNightSky.gif" />
+    <None Include="Resources\sprites\MossyRocks_LateNightSky.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\CloseButton.png" />
-    <Content Include="Resources\CloseButtonHover.png" />
-    <Content Include="Resources\SettingButton.png" />
-    <Content Include="Resources\SettingButtonHover.png" />
-    <Content Include="Resources\Texture1.jpg" />
-    <Content Include="Resources\WoodTitleBar.png" />
+    <Content Include="Resources\sprites\CloseButton.png" />
+    <Content Include="Resources\sprites\CloseButtonHover.png" />
+    <Content Include="Resources\sprites\SettingButton.png" />
+    <Content Include="Resources\sprites\SettingButtonHover.png" />
+    <Content Include="Resources\sprites\Texture1.jpg" />
+    <Content Include="Resources\sprites\WoodTitleBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryClass\LibraryClass.csproj">
+      <Project>{3c17a104-c563-4e99-9af3-f1ccb1e30d0a}</Project>
+      <Name>LibraryClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

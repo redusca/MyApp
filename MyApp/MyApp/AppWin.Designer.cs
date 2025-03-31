@@ -1,4 +1,8 @@
-﻿namespace MyApp
+﻿using MyApp.Controllers;
+using MyApp.Resources.button;
+using System.Drawing;
+
+namespace MyApp
 {
     partial class AppWin
     {
@@ -28,30 +32,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.closeButton = new System.Windows.Forms.Button();
             this.titleBar = new System.Windows.Forms.Panel();
             this.AppName = new System.Windows.Forms.Label();
-            this.SettingButton = new System.Windows.Forms.Button();
             this.background = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.closeButton = new MyApp.Resources.button.MButton();
+            this.SettingButton = new MyApp.Resources.button.MButton();
+            this.clock = new MyApp.Controllers.Clock();
             this.titleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.SuspendLayout();
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeButton.BackColor = System.Drawing.Color.Transparent;
-            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(576, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(32, 32);
-            this.closeButton.TabIndex = 0;
-            this.closeButton.UseVisualStyleBackColor = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
             // 
             // titleBar
             // 
@@ -76,6 +66,44 @@
             this.AppName.TabIndex = 2;
             this.AppName.Text = "label2";
             // 
+            // background
+            // 
+            this.background.BackColor = System.Drawing.Color.Transparent;
+            this.background.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.background.Location = new System.Drawing.Point(0, -1);
+            this.background.Name = "background";
+            this.background.Size = new System.Drawing.Size(608, 224);
+            this.background.TabIndex = 2;
+            this.background.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(256, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "C";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.BackColor = System.Drawing.Color.Transparent;
+            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(576, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(32, 32);
+            this.closeButton.TabIndex = 0;
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
+            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
+            // 
             // SettingButton
             // 
             this.SettingButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,17 +116,18 @@
             this.SettingButton.Size = new System.Drawing.Size(32, 32);
             this.SettingButton.TabIndex = 0;
             this.SettingButton.UseVisualStyleBackColor = false;
+            this.SettingButton.Click += new System.EventHandler(this.SettingButton_Click);
             this.SettingButton.MouseEnter += new System.EventHandler(this.SettingButton_MouseEnter);
             this.SettingButton.MouseLeave += new System.EventHandler(this.SettingButton_MouseLeave);
             // 
-            // background
+            // clock
             // 
-            this.background.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.background.Location = new System.Drawing.Point(0, -1);
-            this.background.Name = "background";
-            this.background.Size = new System.Drawing.Size(608, 224);
-            this.background.TabIndex = 2;
-            this.background.TabStop = false;
+            this.clock.BackColor = System.Drawing.Color.Transparent;
+            this.clock.ForeColor = System.Drawing.Color.Transparent;
+            this.clock.Location = this.label1.Location;
+            this.clock.Name = "clock";
+            this.clock.Size = new System.Drawing.Size(484, 128);
+            this.clock.TabIndex = 0;
             // 
             // AppWin
             // 
@@ -107,6 +136,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.ClientSize = new System.Drawing.Size(608, 224);
+            this.Controls.Add(this.clock);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.titleBar);
             this.Controls.Add(this.background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -121,16 +152,19 @@
             this.titleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button closeButton;
+        private MButton closeButton;
         private System.Windows.Forms.Panel titleBar;
-        private System.Windows.Forms.Button SettingButton;
+        private MButton SettingButton;
         private System.Windows.Forms.PictureBox background;
         private System.Windows.Forms.Label AppName;
+        private System.Windows.Forms.Label label1;
+        private Clock clock;
     }
 }
 
